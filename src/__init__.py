@@ -1,10 +1,11 @@
 import os
-from flask import Flask, request
+from flask import Flask, jsonify
 from flask_jwt_extended import JWTManager
 from flasgger import Swagger
 from src.auth import auth
 from src.dairy import dairy
 from src.database import db
+from src.constants.http_status_codes import HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
 from src.config.swagger import swagger_config, template
 
 
@@ -37,6 +38,13 @@ def create_app(test_config=None):
 
     Swagger(app, config=swagger_config, template=template)
 
+    @app.errorhandler(HTTP_404_NOT_FOUND)
+    def handle_404(e):
+        return jsonify({'error': 'Not found'}), HTTP_404_NOT_FOUND
+
+    @app.errorhandler(HTTP_500_INTERNAL_SERVER_ERROR)
+    def handle_500(e):
+        return jsonify({'error': 'Something went wrong, we are working on it'}), HTTP_500_INTERNAL_SERVER_ERROR
 
     
     return app
