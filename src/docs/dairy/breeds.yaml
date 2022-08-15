@@ -1,0 +1,14 @@
+Get all the breeds available
+
+---
+  tags:
+    - Dairy Farm
+  
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    
+  responses:
+    200:
+      description: "Breeds found"

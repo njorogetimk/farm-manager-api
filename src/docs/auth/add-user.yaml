@@ -1,0 +1,47 @@
+Add a user to the system
+
+---
+  tags:
+    - Authentication
+  
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    - name: body
+      description: The body should contain the new user's details
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - "name"
+          - "username"
+          - "level"
+          - "password"
+        properties:
+          name:
+            type: "string"
+            example: "Timothy Njoroge"
+          username:
+            type: "string"
+            example: "njorogetimk"
+          level:
+            type: "string"
+            example: "admin"
+          password:
+            type: "string"
+            format: "password"
+            example: "*******"
+  
+  responses:
+    201:
+      description: "User created successfully"
+    
+    401:
+      description: "Not authorized to add a user"
+    400:
+      description: "There's a missing value, id, name or level. Also the level is not found"
+    
+    409:
+      description: "The username is already taken"

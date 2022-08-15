@@ -1,0 +1,35 @@
+Edit current details of the cow
+
+---
+  tags:
+    - Dairy Farm
+  
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    
+    - in: body
+      name: body
+      description: "Details to be edited"
+      required: true
+      schema:
+        type: object
+        required:
+          - "name"
+          - "milk"
+        properties:
+          name:
+            type: "string"
+            example: "utugi"
+          milk:
+            type: "string"
+            example: "32"
+  
+  responses:
+    200:
+      description: "Successfull update"
+    400:
+      description: "There's a missing parameter, either milk or name"
+    404:
+      description: "The cow cannot be found"

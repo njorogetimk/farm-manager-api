@@ -1,0 +1,14 @@
+Get the cows in the system
+
+---
+  tags:
+    - Dairy Farm
+
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+  
+  responses:
+    200:
+      description: "Okay!"

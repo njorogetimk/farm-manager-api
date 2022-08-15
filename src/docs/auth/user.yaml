@@ -1,0 +1,16 @@
+Gets a user from the system
+
+---
+  tags:
+    - Authentication
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+  
+  responses:
+    200:
+      description: "user has been found"
+    401:
+      description: "A problem with the authorization header"
+    

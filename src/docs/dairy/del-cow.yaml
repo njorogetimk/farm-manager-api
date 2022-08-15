@@ -1,0 +1,20 @@
+Delete a given cow
+
+---
+  tags:
+    - Dairy Farm
+  
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    
+    - in: path
+      name: id
+      required: true
+  
+  responses:
+    200:
+      description: "Successful deletion"
+    404:
+      description: "The cow is not found"
