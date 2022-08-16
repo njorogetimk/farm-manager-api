@@ -22,7 +22,7 @@ def create_app(test_config=None):
 
 
             SWAGGER={
-                'title': "Bookmarks API",
+                'title': "Simple Farm Manager API",
                 'uiversion': 3
             }
         )
