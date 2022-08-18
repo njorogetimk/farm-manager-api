@@ -12,6 +12,14 @@ Get the all cows of a given gender
     - in: path
       name: gender
       required: true
+    
+    - in: query
+      name: page
+      default: 1
+    
+    - in: query
+      name: per_page
+      default: 5
   
   responses:
     200:

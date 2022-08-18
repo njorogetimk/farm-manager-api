@@ -9,6 +9,14 @@ Get all the breeds available
       name: Authorization
       required: true
     
+    - in: query
+      name: page
+      default: 1
+    
+    - in: query
+      name: per_page
+      default: 5
+    
   responses:
     200:
       description: "Breeds found"

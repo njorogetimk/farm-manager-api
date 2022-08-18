@@ -16,6 +16,14 @@ Get the all the cows of a given gender in a given breed
     - in: path
       name: gender
       required: true
+    
+    - in: query
+      name: page
+      default: 1
+    
+    - in: query
+      name: per_page
+      default: 5
   
   responses:
     200:
