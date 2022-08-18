@@ -12,6 +12,7 @@ template = {
         "termsOfService": "",
         "version": "22.09.0"
     },
+    "host": "localhost:5000",
     "basePath": "/api/v1",  # base bash for blueprint registration
     "schemes": [
         "http",
