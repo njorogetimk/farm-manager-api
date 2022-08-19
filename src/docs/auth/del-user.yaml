@@ -1,0 +1,26 @@
+Deleting a user from the system
+
+---
+  tags:
+    - Authentication
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    
+    - in: path
+      name: "id"
+      required: true
+  
+  responses:
+    200:
+      description: "A successful deletion"
+    
+    401:
+      description: "Not Authorized to do the deletion"
+
+    403:
+      description: "You cannot delete yourself"
+    
+    404:
+      description: "The user provided is not found"

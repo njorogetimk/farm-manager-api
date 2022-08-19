@@ -1,0 +1,42 @@
+Edit a user's details
+
+---
+  tags:
+    - Authentication
+  
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    - name: body
+      description: The body should contain user details you want to change
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - "id"
+          - "name"
+          - "level"
+        properties:
+          id:
+            type: "string"
+            example: "2"
+          name:
+            type: "string"
+            example: "Timothy Njoroge"
+          level:
+            type: "string"
+            example: "admin"
+  
+  responses:
+    200:
+      description: "A successful edit"
+    400:
+      description: "There's a missing value, id, name or level"
+    
+    401:
+      description: "Not authorized to edit the details"
+    
+    404:
+      description: "The user or level provided is not found"

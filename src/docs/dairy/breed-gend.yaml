@@ -1,0 +1,32 @@
+Get the all the cows of a given gender in a given breed
+
+---
+  tags:
+    - Dairy Farm
+  
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    
+    - in: path
+      name: breed
+      required: true
+
+    - in: path
+      name: gender
+      required: true
+    
+    - in: query
+      name: page
+      default: 1
+    
+    - in: query
+      name: per_page
+      default: 5
+  
+  responses:
+    200:
+      description: "Cows found"
+    404:
+      description: "The gender or breed not found"

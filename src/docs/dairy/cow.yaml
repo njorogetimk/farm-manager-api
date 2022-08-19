@@ -1,0 +1,20 @@
+Get a single cow
+
+---
+  tags:
+    - Dairy Farm
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+    
+    - in: path
+      name: "id"
+      required: true
+  
+  responses:
+    200:
+      description: "Found!"
+    
+    404:
+      description: "Cow with that id not found"

@@ -1,0 +1,15 @@
+Refresh the access token
+
+---
+  tags:
+    - Authentication
+  parameters:
+    - in: header
+      name: Authorization
+      required: true
+  
+  responses:
+    200:
+      description: "A new access token has been provided"
+    404:
+      description: "User not found"
