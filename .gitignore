@@ -1,5 +1,4 @@
 __pycache__/
 .env
 .pytest/
-*.sqlite
 db_init.txt
